@@ -53,7 +53,7 @@ export default function Organization(props) {
         .then(function (valid) {
             if(valid) {
                 setValid(true)
-                axios.put(`http://139.59.57.230:1337/organizations/${org.id}`, data)
+                axios.put(`https://rbacapi.saikiranreddy.com/organizations/${org.id}`, data)
                 .then((res)=> {
                     console.log(res)
                 })
@@ -69,7 +69,7 @@ export default function Organization(props) {
         
     }
     useEffect(()=> {
-        axios.get(`http://139.59.57.230:1337/organizations/${props.match.params.id}`)
+        axios.get(`https://rbacapi.saikiranreddy.com/organizations/${props.match.params.id}`)
         .then((res)=> {
             let response = res.data
             setOrg(response)
@@ -80,7 +80,7 @@ export default function Organization(props) {
             setWebsite(response.website)
             setAddress(response.address)
         })
-        axios.get(`http://139.59.57.230:1337/orgusers?organization=${props.match.params.id}`)
+        axios.get(`https://rbacapi.saikiranreddy.com/orgusers?organization=${props.match.params.id}`)
         .then((res)=> {
             setSUers(res.data)
             setUsersLoading(false)

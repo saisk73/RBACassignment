@@ -20,7 +20,7 @@ export default function BasicTextFields(props) {
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
   function loginAPI() {
-    axios.get(`http://139.59.57.230:1337/orgusers?email=${email}`)
+    axios.get(`https://rbacapi.saikiranreddy.com/orgusers?email=${email}`)
     .then((res)=> {
       let data = res.data
       if(res.data.length > 0) {

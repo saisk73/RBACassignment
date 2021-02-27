@@ -51,7 +51,7 @@ export default function AddOrganization(props) {
         .then(function (valid) {
             if(valid) {
                 setValid(true)
-                axios.post('http://139.59.57.230:1337/organizations', data)
+                axios.post('https://rbacapi.saikiranreddy.com/organizations', data)
                 .then((res)=> {
                     console.log(data)
                     props.history.push('/a/organizations') 

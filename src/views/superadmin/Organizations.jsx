@@ -34,7 +34,7 @@ export default function Organizations() {
     const [ orgs, setOrgs ] = useState([])
     const [loading, setLoading ] = useState(true)
     useEffect(() => {
-        axios.get('http://139.59.57.230:1337/organizations')
+        axios.get('https://rbacapi.saikiranreddy.com/organizations')
         .then((res)=> {
             setOrgs(res.data)  
             setTimeout(function(){ setLoading(false) }, 500);

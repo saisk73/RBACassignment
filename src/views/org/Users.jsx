@@ -37,14 +37,14 @@ export default function Users() {
             role: role,
             organization: orgid
         }
-        axios.post('http://139.59.57.230:1337/orgusers', data)
+        axios.post('https://rbacapi.saikiranreddy.com/orgusers', data)
         .then((res)=> {
             console.log(res.data)
         })
     }
     useEffect(()=> {
         let orgid = localStorage.getItem('orgid')
-        axios.get(`http://139.59.57.230:1337/orgusers?organization=${orgid}`)
+        axios.get(`https://rbacapi.saikiranreddy.com/orgusers?organization=${orgid}`)
         .then((res)=> {
             setUsers(res.data)
             setLoading(false)
